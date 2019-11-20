@@ -20,4 +20,4 @@ jobs:
           git_token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         run: |
           PR_NUMBER=`echo $GITHUB_REF | cut -d'/' -f3`
-          curl -X DELETE -H "${git_token}" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/NO_JIRA
+          curl -X DELETE -H "734b4cedf0d7815ed5a878c082e71c2acb64c4c7" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/NO_JIRA
