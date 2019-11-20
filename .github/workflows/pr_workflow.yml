@@ -4,9 +4,9 @@ on :
     branches:
       - mas*
 jobs:
-  say-hello:
+  print-env:
     runs-on: ubuntu-18.04
-    name: "Hi"
+    name: "Print all env"
     steps:
-      - name: "Say hi"
-        run: "echo hi"
+      - name: "print env"
+        run: "env"
