@@ -10,3 +10,15 @@ jobs:
     steps:
       - name: "print env"
         run: "env"
+  jira-check:
+    needs: print-env
+    runs-on: ubuntu-18.04
+    name: "Check For JIRA ID in PR title"
+    steps:
+      - name: "Check JIRA ID"
+        env: 
+          github_access_token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+        echo ${github_access_token}
+        echo ${github_token}
