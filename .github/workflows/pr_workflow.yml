@@ -20,5 +20,5 @@ jobs:
           github_access_token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-        echo ${github_access_token}
-        echo ${github_token}
+          echo ${github_access_token}
+          echo ${github_token}
