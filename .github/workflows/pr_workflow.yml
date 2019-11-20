@@ -17,8 +17,7 @@ jobs:
     steps:
       - name: "Check JIRA ID"
         env: 
-          github_access_token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          echo ${github_access_token}
-          echo ${github_token}
+          PR_NUMBER=`echo $GITHUB_REF | cut -d'/' -f3`
+          curl -X DELETE -H "${git_token}" https://api.github.com/repos/hike/sticker-chat/issues/${PR_NUMBER}/labels/NO_JIRA
