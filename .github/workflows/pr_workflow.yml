@@ -2,7 +2,7 @@ name : "Per PR workflow"
 on :
   pull_request:
     branches:
-      - github*
+      - mas*
 jobs:
   say-hello:
     runs-on: ubuntu-18.04
