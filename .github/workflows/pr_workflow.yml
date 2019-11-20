@@ -20,4 +20,4 @@ jobs:
           git_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
           PR_NUMBER=`echo $GITHUB_REF | cut -d'/' -f3`
-          curl -X DELETE -H "${git_token}" https://api.github.com/repos/hike/sticker-chat/issues/${PR_NUMBER}/labels/NO_JIRA
+          curl -X DELETE -H "${git_token}" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/NO_JIRA
