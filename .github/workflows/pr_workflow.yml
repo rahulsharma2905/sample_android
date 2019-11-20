@@ -29,5 +29,5 @@ jobs:
       - name: checkout code
         uses: actions/checkout@v1 
       - name: list
-        uses: ls
+        run: ls
       
