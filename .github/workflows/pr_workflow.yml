@@ -4,14 +4,7 @@ on :
     branches:
       - mas*
 jobs:
-  print-env:
-    runs-on: ubuntu-18.04
-    name: "Print all env"
-    steps:
-      - name: "print env"
-        run: "env"
   jira-check:
-    needs: print-env
     runs-on: ubuntu-18.04
     name: "Check For JIRA ID in PR title"
     steps:
@@ -22,12 +15,11 @@ jobs:
           PR_NUMBER=`echo $GITHUB_REF | cut -d'/' -f3`
           curl -X DELETE -H "Authorization: token ${git_token}" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/NO_JIRA
   checkout-code:
-    needs: print-env
     runs-on: ubuntu-18.04
     name: checkout code
     steps:
       - name: checkout code
         uses: actions/checkout@v1 
       - name: list
-        run: git status
+        run: git log
       
