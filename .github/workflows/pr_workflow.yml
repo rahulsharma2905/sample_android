@@ -1,0 +1,12 @@
+name : "Per PR workflow"
+on :
+  pull_request:
+    branches:
+      - github*
+jobs:
+  say-hello:
+    runs-on: ubuntu-18.04
+    name: "Hi"
+    steps:
+      - name: "Say hi"
+        run: "echo hi"
