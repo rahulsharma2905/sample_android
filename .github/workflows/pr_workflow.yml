@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: "Check JIRA ID"
         env: 
-          git_token: ${{ secrets.GITHUB_TOKEN }}
+          git_token: ${{ secrets.GITHUB_ACCESS_TOKEN }}
         run: |
           PR_NUMBER=`echo $GITHUB_REF | cut -d'/' -f3`
           curl -X DELETE -H "${git_token}" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/NO_JIRA
