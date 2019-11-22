@@ -12,6 +12,8 @@ jobs:
         env: 
           git_token: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          free -h
+          df -h
           PR_NUMBER=`echo $GITHUB_REF | cut -d'/' -f3`
           curl -X DELETE -H "Authorization: token ${git_token}" https://api.github.com/repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/labels/NO_JIRA
   checkout-code:
